@@ -12,11 +12,11 @@ body {
 }
 
 .header{
-    margin: 3% 0 5% 0;
+    margin: 3% 0;
 }
 .header__title{
     font-weight: 700;
-    font-size: 4.5vw;
+    font-size: 3.5vw;
     margin: 0;
 }
 
@@ -29,16 +29,16 @@ body {
 
 .header__circle {
   position: relative;
-  height: 200px;
+  height: 150px;
   width: 800px;
   background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
   border-radius: 50%;
-  animation: rotate 5s linear infinite;
+  animation: rotate 2.5s linear infinite;
 }
 
 .header__circle span {
   position: absolute;
-  height: 200px;
+  height: 150px;
   width: 800px;
   background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
   border-radius: 50%;
@@ -61,7 +61,7 @@ span:nth-child(4) {
 }
 
 .header__circle-inner{
-  height: 180px;
+  height: 130px;
   width: 780px;
   position: absolute;
   background: rgb(22, 22, 22);
@@ -80,12 +80,27 @@ span:nth-child(4) {
   }
 }
 
+.main__subtitle{
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
+    text-align: center;
+}
+.placeholder{
+    font-weight: 800;
+    text-align: center;
+    margin: 4%;
+    letter-spacing: 15px
+}
 .form__label{
     font-size: 2vw;
+    width: 100%;
+    text-align: center;
 }
 
 .form__letter{
-    width: 100%;
+
+    width: 40%;
     text-align: center;
     margin: 5% 0;
     color: black;
@@ -112,4 +127,9 @@ span:nth-child(4) {
   .btn_guess:hover{
     cursor: pointer;
     transform: scale(1.2);
+  }
+  .message{
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
   }
