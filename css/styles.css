@@ -99,10 +99,9 @@ span:nth-child(4) {
 }
 
 .form__letter{
-
-    width: 40%;
+    width: 300px;
     text-align: center;
-    margin: 5% 0;
+    margin:3% 0;
     color: black;
     padding: 2%;
     border: 5px solid #9f28bd;
@@ -122,7 +121,7 @@ span:nth-child(4) {
     border: 1px solid white;
     padding: 20% 50%;
     transition: all ease 0.5s;
-    margin-left: -30%;
+    margin-left: -50%;
   }
   .btn_guess:hover{
     cursor: pointer;
@@ -132,4 +131,19 @@ span:nth-child(4) {
     width: 100%;
     text-align: center;
     margin-top: 0;
+  }
+
+  .list__letters{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .item__letters{
+    margin: 2%;
+  }
+  .hidden{
+    display: none;
+  }
+  .active{
+    display: block;
   }
