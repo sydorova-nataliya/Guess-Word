@@ -1,0 +1,135 @@
+*{
+    font-family: 'Karla', sans-serif; 
+    color: white;
+    font-size: 1.5vw;
+}
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    background-color: #2A3137; 
+}
+
+.header{
+    margin: 3% 0;
+}
+.header__title{
+    font-weight: 700;
+    font-size: 3.5vw;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__circle {
+  position: relative;
+  height: 150px;
+  width: 800px;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 50%;
+  animation: rotate 2.5s linear infinite;
+}
+
+.header__circle span {
+  position: absolute;
+  height: 150px;
+  width: 800px;
+  background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 50%;
+}
+
+span:nth-child(1) {
+  filter: blur(5px);
+}
+
+span:nth-child(2) {
+  filter: blur(10px);
+}
+
+span:nth-child(3) {
+  filter: blur(25px);
+}
+
+span:nth-child(4) {
+  filter: blur(50px);
+}
+
+.header__circle-inner{
+  height: 130px;
+  width: 780px;
+  position: absolute;
+  background: rgb(22, 22, 22);
+  top: 10px;
+  left: 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.main__subtitle{
+    font-style: italic;
+    font-weight: 200;
+    margin: 0;
+    text-align: center;
+}
+.placeholder{
+    font-weight: 800;
+    text-align: center;
+    margin: 4%;
+    letter-spacing: 15px
+}
+.form__label{
+    font-size: 2vw;
+    width: 100%;
+    text-align: center;
+}
+
+.form__letter{
+
+    width: 40%;
+    text-align: center;
+    margin: 5% 0;
+    color: black;
+    padding: 2%;
+    border: 5px solid #9f28bd;
+    border-radius: 20px;
+    transition: all ease 0.5s;
+  }
+  
+  .form__letter:active,
+  .form__letter:focus {
+    outline: 0;
+    border: 5px solid #7d4f86;
+  }
+
+  .btn_guess{
+    background-color: #7d4f86;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 20% 50%;
+    transition: all ease 0.5s;
+    margin-left: -30%;
+  }
+  .btn_guess:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  .message{
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }

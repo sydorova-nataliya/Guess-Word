@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Karla:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400&family=Marcellus&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Guess the word!</title>
 </head>
 <body>
     <header class="header">
-        <h1 class="header__title">Guess the word!</h1>
+    <div class="header__circle">
+        <div class="header__circle-inner container">  
+            <h1 class="header__title">Guess the word!</h1>
+        </div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
+    <main class="main">
+        <h4 class="main__subtitle">The word you have to guess:</h4>
+        <div class="placeholder"></div>
+        <form class="form container">
+            <label for="form__letter" class="form__label">Type one letter:</label>
+            <input type="text" id="form__letter" name="letter" class="form__letter" />
 
+            <p class="message"></p>
+            
+            <div class="btn">
+              <button class="btn_guess">Guess!</button>
+            </div>
+        </form>
 
+    </main>
     <script src="js/script.js"></script>
 </body>
 </html>
