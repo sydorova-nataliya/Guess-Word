@@ -24,12 +24,14 @@
     <main class="main">
         <h4 class="main__subtitle">The word you have to guess:</h4>
         <div class="placeholder"></div>
+        <h5 class="main__subtitle main__subtitle-letters hidden">Letters that you have already entered:</h5>
+        <ul class="list__letters container"></ul>
         <form class="form container">
             <label for="form__letter" class="form__label">Type one letter:</label>
             <input type="text" id="form__letter" name="letter" class="form__letter" />
 
             <p class="message"></p>
-            
+
             <div class="btn">
               <button class="btn_guess">Guess!</button>
             </div>
