@@ -86,6 +86,10 @@ span:nth-child(4) {
     margin: 0;
     text-align: center;
 }
+.remaining{
+    text-align: center;
+    text-decoration:underline;
+}
 .placeholder{
     font-weight: 800;
     text-align: center;
@@ -119,9 +123,8 @@ span:nth-child(4) {
     background-color: #7d4f86;
     border-radius: 20px;
     border: 1px solid white;
-    padding: 20% 50%;
+    padding: 2% 5%;
     transition: all ease 0.5s;
-    margin-left: -50%;
   }
   .btn_guess:hover{
     cursor: pointer;
