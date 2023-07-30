@@ -5,8 +5,9 @@ const message = document.querySelector(".message");
 const listOfLetters = document.querySelector(".list__letters");
 const subtitle = document.querySelector(".main__subtitle-letters");
 
-const hiddenWord = "test";
+let hiddenWord = "";
 const guessedLetters = [];
+
 
 const placeholderHtml=hiddenWord=>{
     let fullWord = [];
@@ -16,7 +17,47 @@ const placeholderHtml=hiddenWord=>{
     placeholder.innerText=fullWord.join('');
 }
 
-placeholderHtml(hiddenWord);
+const getWord = ()=>{
+    fetch("https://649c7b6e0480757192383bfc.mockapi.io/words")
+        .then(res=> res.json())
+        .then(data=>{
+            const randomIndex = Math.floor(Math.random() * data.length);
+            hiddenWord = data[randomIndex].trim();
+            placeholderHtml(hiddenWord);
+            console.log(hiddenWord);
+        }) 
+}
+
+getWord();
+
+const addListLetters = (letters)=>{
+    listOfLetters.innerHTML = "";
+    subtitle.classList.add("active")
+    for (const letter of letters) {
+        let li = document.createElement('li');
+        li.innerText = letter;
+        li.classList.add('item__letters');
+        listOfLetters.append(li);
+    }
+}
+
+const addedGuessedLetter = (guessedLetters)=>{
+    const hiddenWordArray =hiddenWord.toUpperCase().split('');
+    
+    const revealWord = [];
+    for (const letter of hiddenWordArray) {
+        if (guessedLetters.includes(letter)) {
+            revealWord.push(letter.toUpperCase());
+          } else {
+            revealWord.push("*");
+          }
+    }
+    placeholder.innerHTML=revealWord.join('');
+
+    if(placeholder.innerText == hiddenWord.toUpperCase()){
+        message.innerText="you won!!";
+    }
+}
 
 btn_guess.addEventListener('click', function(e){
     e.preventDefault();
@@ -36,33 +77,3 @@ btn_guess.addEventListener('click', function(e){
     addListLetters(guessedLetters);
     form__letter.value= '';
 })
-
-const addListLetters = (letters)=>{
-    listOfLetters.innerHTML = "";
-    subtitle.classList.add("active")
-    for (const letter of letters) {
-        let li = document.createElement('li');
-        li.innerText = letter;
-        li.classList.add('item__letters');
-        listOfLetters.append(li)
-    }
-}
-const addedGuessedLetter = (guessedLetters)=>{
-    const wordArray =hiddenWord.toUpperCase().split('');
-    const revealWord = [];
-    for (const letter of wordArray) {
-        if (guessedLetters.includes(letter)) {
-            revealWord.push(letter.toUpperCase());
-          } else {
-            revealWord.push("*");
-          }
-    }
-    placeholder.innerHTML=revealWord.join('');
-    checkWin();
-}
-
-const checkWin = ()=>{
-    if(placeholder.innerText == hiddenWord.toUpperCase()){
-        message.innerText="you won!!";
-    }
-}
