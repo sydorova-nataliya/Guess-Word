@@ -119,14 +119,14 @@ span:nth-child(4) {
     border: 5px solid #7d4f86;
   }
 
-  .btn_guess{
+  .btn{
     background-color: #7d4f86;
     border-radius: 20px;
     border: 1px solid white;
     padding: 2% 5%;
     transition: all ease 0.5s;
   }
-  .btn_guess:hover{
+  .btn:hover{
     cursor: pointer;
     transform: scale(1.2);
   }
@@ -149,4 +149,8 @@ span:nth-child(4) {
   }
   .active{
     display: block;
+  }
+  .victory{
+    font-size: 3vw;
+    margin-bottom: 0;
   }
