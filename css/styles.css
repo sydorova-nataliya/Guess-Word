@@ -9,16 +9,17 @@ body {
 	justify-content: center;
 	flex-direction: column;
     background-color: #2A3137; 
+    overflow: hidden;
 }
 .hidden{
     display: none;
-  }
-  .active{
+}
+.active{
     display: block;
-  }
-  .blur{
+}
+.blur{
     filter: blur(4px);
-  }
+}
 .header{
     margin: 3% 0 0 0;
 }
@@ -121,58 +122,57 @@ body {
     border: 5px solid #9f28bd;
     border-radius: 20px;
     transition: all ease 0.5s;
-  }
+}
   
-  .form__letter:active,
-  .form__letter:focus {
+.form__letter:active,.form__letter:focus {
     outline: 0;
     border: 5px solid #7d4f86;
-  }
+}
 
-  .btn{
+.btn{
     background-color: #7d4f86;
     border-radius: 20px;
     border: 1px solid white;
     padding: 2% 5%;
     transition: all ease 0.5s;
-  }
-  .btn:hover{
+}
+.btn:hover{
     cursor: pointer;
     transform: scale(1.2);
-  }
-  .message{
+}
+.message{
     width: 100%;
     text-align: center;
     margin-top: 0;
-  }
+}
 
-  .list__letters{
+.list__letters{
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
-  .item__letters{
+}
+.item__letters{
     margin: 2%;
-  }
+}
 
-  .victory{
+.victory{
     font-size: 3vw;
     margin-bottom: 0;
-  }
+}
 
-  .rules-btn{
+.rules-btn{
     border: none;
     background-color: inherit;
     padding: 0;
     transition: all ease 0.3s;
     margin-bottom: 5%;
-  }
-  .rules-btn:hover, .close:hover{
+}
+.rules-btn:hover, .close:hover{
     cursor: pointer;
     transform: scale(1.2);
-  }
+}
 
-  .rules{
+.rules{
     width:50%;
     padding: 2%;
     margin:0 auto;
@@ -180,21 +180,20 @@ body {
     border:solid 5px rgba(202, 148, 220, 0.258);
     background-color: #483b4f;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
+}
 
-  .rules-list__item{
+.rules-list__item{
     font-size: 1.2vw;
-  }
+}
 
-  
-  .close{
+.close{
     position: relative;
     width: 30px;
     float: right;
     height: 30px;
     transition: all ease 0.3s;
-  }
-  .close-slash1{
+}
+.close-slash1{
     position: absolute;
     background-color: black;
     width: 100%;
@@ -202,9 +201,9 @@ body {
     top: 50%;
     right: 30%;
     transform: rotate(45deg);
-  }
+}
 
-  .close-slash2{
+.close-slash2{
     position: absolute;
     background-color: black;
     width: 100%;
@@ -212,4 +211,28 @@ body {
     top: 50%;
     right: 30%;
     transform: rotate(-45deg);
-  }
+}
+
+.shadow{
+    position: absolute;
+    opacity: 0.4;
+    filter: blur(100px);
+    border-radius: 50%;
+}
+
+.shadow_blue{
+    top: 27vw;
+    right: 16vw;
+    width: 143vw;
+    height: 48vw;
+    background-color: rgb(143, 95, 123);
+    z-index: -1;
+}
+.shadow_yellow{
+    width: 51vw;
+    height: 65vw;
+    background-color: rgb(126, 179, 215);
+    top: -45vw;
+    right: -72vw;
+    z-index: -1;
+}
