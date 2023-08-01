@@ -1,13 +1,20 @@
 const btn_guess = document.querySelector(".btn_guess");
-const form__letter = document.querySelector(".form__letter");
+const formLetter = document.querySelector(".form__letter");
 const placeholder = document.querySelector(".placeholder");
 const message = document.querySelector(".message");
 const listOfLetters = document.querySelector(".list__letters");
 const subtitle = document.querySelector(".main__subtitle-letters");
+const formLabel = document.querySelector(".form__label");
+const btnPlay = document.querySelector(".btn_again");
+
+const rulesBtn = document.querySelector(".rules-btn");
+const rules = document.querySelector(".rules");
+const main = document.querySelector(".main");
+const header = document.querySelector(".header");
+const closeBtn = document.querySelector(".close");
 
 let hiddenWord = "";
-const guessedLetters = [];
-
+let guessedLetters = [];
 
 const placeholderHtml=hiddenWord=>{
     let fullWord = [];
@@ -41,9 +48,18 @@ const addListLetters = (letters)=>{
     }
 }
 
+const checkWin = ()=>{
+    if(placeholder.innerText == hiddenWord.toUpperCase()){
+        message.innerHTML=`<h6 class="victory" >YOU WON!!</h6> <br> Do you want to play again?`;
+        btn_guess.classList.add('hidden');
+        formLetter.classList.add('hidden');
+        formLabel.classList.add('hidden');
+        btnPlay.classList.remove('hidden');
+    }
+}
+
 const addedGuessedLetter = (guessedLetters)=>{
     const hiddenWordArray =hiddenWord.toUpperCase().split('');
-    
     const revealWord = [];
     for (const letter of hiddenWordArray) {
         if (guessedLetters.includes(letter)) {
@@ -53,27 +69,48 @@ const addedGuessedLetter = (guessedLetters)=>{
           }
     }
     placeholder.innerHTML=revealWord.join('');
-
-    if(placeholder.innerText == hiddenWord.toUpperCase()){
-        message.innerText="you won!!";
-    }
+    checkWin();
 }
 
 btn_guess.addEventListener('click', function(e){
     e.preventDefault();
-    if (form__letter.value.length === 0) { message.innerText = "Please enter a letter."; } 
-    else if (form__letter.value.length > 1) { message.innerText = "Please enter one letter."; }
-    else if (!form__letter.value.match(/[a-zA-Z]/)) { message.innerText = "Please enter a letter from A to Z."; }
+    if (formLetter.value.length === 0) { message.innerText = "Please enter a letter."; } 
+    else if (formLetter.value.length > 1) { message.innerText = "Please enter one letter."; }
+    else if (!formLetter.value.match(/[a-zA-Z]/)) { message.innerText = "Please enter a letter from A to Z."; }
     else{
-        if(guessedLetters.includes(form__letter.value.toUpperCase())){
+        if(guessedLetters.includes(formLetter.value.toUpperCase())){
             message.innerText = "You have already guessed this letter. Try again!";
         } else{
-            guessedLetters.push(form__letter.value.toUpperCase());
+            guessedLetters.push(formLetter.value.toUpperCase());
             message.innerText = "";
             addedGuessedLetter(guessedLetters);
             
         }
     } 
     addListLetters(guessedLetters);
-    form__letter.value= '';
+    formLetter.value= '';
 })
+
+btnPlay.addEventListener('click', function(e){
+    e.preventDefault();
+    btn_guess.classList.remove('hidden');
+    btnPlay.classList.add('hidden');
+    message.innerHTML = "";
+    formLabel.classList.remove('hidden');
+    formLetter.classList.remove('hidden');
+    guessedLetters = [];
+    getWord();
+    listOfLetters.innerHTML ="";
+})
+
+rulesBtn.addEventListener('click', function(){
+   main.classList.add('blur');
+   header.classList.add('blur');
+   rules.classList.remove('hidden');
+})
+
+closeBtn.addEventListener('click', function(){
+    main.classList.remove('blur');
+    header.classList.remove('blur');
+    rules.classList.add('hidden');
+ })
