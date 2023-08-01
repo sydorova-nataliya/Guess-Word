@@ -7,6 +7,12 @@ const subtitle = document.querySelector(".main__subtitle-letters");
 const formLabel = document.querySelector(".form__label");
 const btnPlay = document.querySelector(".btn_again");
 
+const rulesBtn = document.querySelector(".rules-btn");
+const rules = document.querySelector(".rules");
+const main = document.querySelector(".main");
+const header = document.querySelector(".header");
+const closeBtn = document.querySelector(".close");
+
 let hiddenWord = "";
 let guessedLetters = [];
 
@@ -96,3 +102,15 @@ btnPlay.addEventListener('click', function(e){
     getWord();
     listOfLetters.innerHTML ="";
 })
+
+rulesBtn.addEventListener('click', function(){
+   main.classList.add('blur');
+   header.classList.add('blur');
+   rules.classList.remove('hidden');
+})
+
+closeBtn.addEventListener('click', function(){
+    main.classList.remove('blur');
+    header.classList.remove('blur');
+    rules.classList.add('hidden');
+ })

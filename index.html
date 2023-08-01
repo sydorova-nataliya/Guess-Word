@@ -15,13 +15,14 @@
         <div class="header__circle-inner container">  
             <h1 class="header__title">Guess the word!</h1>
         </div>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
+        <span class="border"></span>
       </div>
     </header>
     <main class="main">
+        <button class="rules-btn">Rules!</button>
         <h4 class="main__subtitle">The word you have to guess:</h4>
         <div class="placeholder"></div>
         <h5 class="main__subtitle main__subtitle-letters hidden">Letters that you have already entered:</h5>
@@ -33,7 +34,23 @@
             <button class="btn btn_guess">Guess!</button>
             <button class="btn btn_again hidden">Play again</button>
         </form>
+
+
     </main>
+    <div class="rules hidden">
+        <div class="close">
+            <span class="close-slash1"></span>
+            <span class="close-slash2"></span>
+        </div>
+        <h4>Rules:</h1>
+            <ol class="rules-list">
+                <li class="rules-list__item">The player must enter one letter at a time.</li>
+                <li class="rules-list__item">The player cannot enter numbers or more than 1 letter.</li>
+                <li class="rules-list__item">If a letter occurs in a word, it opens in the encrypted word.</li>
+                <li class="rules-list__item">if there is no letter in the encrypted word, it appears in the list of letters that have already been entered.</li>
+                <li class="rules-list__item">The player wins after guessing all the letters in the word</li>
+            </ol>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
